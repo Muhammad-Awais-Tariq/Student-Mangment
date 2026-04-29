@@ -10,5 +10,3 @@ st.title("Admin Page")
 options = ["Enroll" , "Directory" , "Top Scores","Edit / Drop" , "Analytics "]
 
 option = st.selectbox("Select required functionality", options)
-
-st.write(option)

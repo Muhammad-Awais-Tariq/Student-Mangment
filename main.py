@@ -18,8 +18,15 @@ def get_students(name , password):
     
     return False
 
+          
+def insert_student(studentId , fullName, password , program ,semester ,  section ,semesterGPA ,  cgpa , status):
+    document = { "studentId": studentId, "fullName": fullName, "password": password, "program": program, "semester": semester, "section": section, "semesterGPA": semesterGPA, "cgpa": cgpa, "status": status , "enrolledCourses" : []}
+    students.insert_one(document)
+
 def main():
     student = get_students("Hassan Raza" , 141 )
     print(student)
+    insert_student("0423","awais",123,"bcs",4,"B",3.2,3.2,"Active")
+    
 if __name__ == "__main__":
     main()

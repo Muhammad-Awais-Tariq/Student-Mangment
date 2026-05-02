@@ -1,5 +1,5 @@
 import streamlit as st
-from main import show_courses,get_gpa , get_stat , get_rank
+from main import show_courses,get_gpa , get_stat , get_rank , get_course_stats
 import pandas as pd
 
 if "is_student" not in st.session_state or not st.session_state.is_student:
@@ -111,4 +111,26 @@ if st.session_state.is_selected:
         with col_center:
             st.info(f"You are ranked **{rank['ranking']}** out of **{rank['total_student']}** students in **{rank['program']}**, Semester **{rank['semester']}**")
     else:
-        st.write("My Courses")
+        result = get_course_stats(st.session_state.name)
+
+        st.markdown("## Enrolled Courses")
+        st.divider()
+
+        course_data = [
+            {
+                "Course Code": course["courseCode"],
+                "Course Name": course["courseName"],
+                "Instructor": course["instructor"],
+                "Credit Hours": course["creditHours"],
+            }
+            for course in result["courses"]
+        ]
+
+        course_data.append({
+            "Course Code": "",
+            "Course Name": "",
+            "Instructor": "Total",
+            "Credit Hours": result["sum"],
+        })
+
+        st.table(course_data)

@@ -94,7 +94,7 @@ def get_rank(name):
 
 def get_course_stats(name):
     result = students.aggregate([
-        {"$match": {"fullName": "Kamran Iqbal"}},
+        {"$match": {"fullName": name}},
         {"$unwind": "$enrolledCourses"},
          {"$group": {"_id": None, "sum": {"$sum": "$enrolledCourses.creditHours"} , "courses" : {"$push" : "$enrolledCourses"}}},
         {"$project": {"courses.courseName" : 1, "courses.courseCode": 1,"courses.instructor": 1,"courses.creditHours": 1, "sum" : 1, "_id": 0}}])    

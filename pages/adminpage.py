@@ -14,9 +14,15 @@ option = st.selectbox("Select required functionality", options)
 if "is_selected" not in st.session_state:
     st.session_state.is_selected = False
 
+if "last_option" not in st.session_state:
+    st.session_state.last_option = None
+
+if option != st.session_state.last_option:
+    st.session_state.is_selected = False
+    st.session_state.last_option = option
+
 if st.button("Start"):
     st.session_state.is_selected = True
-
 if st.session_state.is_selected:
     if option == "Enroll":
         id = st.text_input("Enter the Student id: ")
@@ -30,8 +36,6 @@ if st.session_state.is_selected:
         status = st.selectbox("Select status" , ["Active","Passive"])
         if st.button("INSERT"):
             insert_student(id,name,password,program,semester,section,semesterGPA,cgpa,status)
-            st.session_state.is_selected = False
-            st.rerun()
     elif option == "Directory":
         st.write("Directory")
     elif option == "Top Scores":

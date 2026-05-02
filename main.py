@@ -23,10 +23,23 @@ def insert_student(studentId , fullName, password , program ,semester ,  section
     document = { "studentId": studentId, "fullName": fullName, "password": password, "program": program, "semester": semester, "section": section, "semesterGPA": semesterGPA, "cgpa": cgpa, "status": status , "enrolledCourses" : []}
     students.insert_one(document)
 
+def show_courses(name):
+    courses = students.find({"fullName" : name}, {"enrolledCourses": 1, "_id": 0})
+
+    for course in courses:
+        courses_list = (course["enrolledCourses"])
+        new_list = []
+        for couse in courses_list:
+            new_list.append([couse["courseName"],couse["totalMarks"],couse["marksObtained"],couse["grade"]])
+            
+    return new_list
+
+
 def main():
-    student = get_students("Hassan Raza" , 141 )
-    print(student)
-    insert_student("0423","awais",123,"bcs",4,"B",3.2,3.2,"Active")
+    # student = get_students("Hassan Raza" , 141 )
+    # print(student)
+    # insert_student("0423","awais",123,"bcs",4,"B",3.2,3.2,"Active")
+    print(show_courses("Ali Raza"))
     
 if __name__ == "__main__":
     main()

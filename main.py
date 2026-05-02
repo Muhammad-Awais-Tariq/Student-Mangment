@@ -64,12 +64,41 @@ def get_stat(name):
     for value in result :
         return value
 
+def get_total_Student(program , semester):
+    total_students = students.count_documents({ "program" : program ,"semester" : semester })
+    return total_students
+
+def get_rank(name):
+    rank = students.aggregate([
+    {
+        "$setWindowFields": {
+        "partitionBy": { "program": "$program", "semester": "$semester" },
+        "sortBy": { "cgpa": -1 },
+        "output": {
+            "ranking": { "$denseRank": {} }
+        }
+        }
+    },
+    {
+        "$match": { "fullName": name }  
+    },
+    {
+        "$project": {"ranking": 1,  "program" : 1 , "semester": 1 , "_id": 0 } 
+    }
+    ])    
+
+    for value in rank:
+        value["total_student"] = get_total_Student(value["program"] ,value["semester"] )
+    
+    return value
+    
 def main():
     # student = get_students("Hassan Raza" , 141 )
     # print(student)
     # insert_student("0423","awais",123,"bcs",4,"B",3.2,3.2,"Active")
     # print(get_gpa("Ali Raza"))
-    get_stat("Ali Raza")
+    # get_stat("Ali Raza")
+    get_rank("Ali Raza")
     
 if __name__ == "__main__":
     main()

@@ -1,25 +1,25 @@
 import streamlit as st
-from main import show_courses,get_gpa , get_stat , get_rank , get_course_stats
+from main import show_courses,get_gpa , get_stat , get_rank , get_course_stats  
 import pandas as pd
 
-if "is_student" not in st.session_state or not st.session_state.is_student:
+if "is_student" not in st.session_state or not st.session_state.is_student: #check to see if the student is logged in or not
     st.error("Access denied")
     st.stop()
 
 st.success(f"You have signed in as {st.session_state.name}")
 st.title("Student page")
 
-if "is_selected" not in st.session_state:
+if "is_selected" not in st.session_state:  #flag to prevent the delteion of field when streamlit rerun
     st.session_state.is_selected = False
 
-if "last_option" not in st.session_state:
+if "last_option" not in st.session_state:  #to clear the fileds when the user select another option
     st.session_state.last_option = None
 
 options = ["My Grades" , "My GPA" , "My Stats","My Rank" , "My Courses"]
 
 option = st.selectbox("Select required functionality", options)
 
-if option != st.session_state.last_option:
+if option != st.session_state.last_option: #change flags when the user select another option
     st.session_state.is_selected = False
     st.session_state.last_option = option
 
@@ -55,7 +55,7 @@ if st.session_state.is_selected:
         st.divider()
 
         st.markdown("**Semester GPA Progress**")
-        st.progress(float(gpa["semesterGPA"]) / 4.0, text=f'{gpa["semesterGPA"]} / 4.0')
+        st.progress(float(gpa["semesterGPA"]) / 4.0, text=f'{gpa["semesterGPA"]} / 4.0') #first part show the value the second part the text
 
         st.markdown("**Cumulative GPA Progress**")
         st.progress(float(gpa["cgpa"]) / 4.0, text=f'{gpa["cgpa"]} / 4.0')
@@ -70,7 +70,7 @@ if st.session_state.is_selected:
 
         with col1:
             st.success("Best Subject")
-            st.markdown(f"**{result['MaxCourse'][0]['MaxCourseName']}**")
+            st.markdown(f"**{result['MaxCourse'][0]['MaxCourseName']}**")  #it goes to the key of the result and it give courses in list so go the 0 and then find the max course
             st.metric(label="Marks Obtained", value=result['MaxCourse'][0]['MaxObtainedMarks'])
 
         with col2:
@@ -123,14 +123,14 @@ if st.session_state.is_selected:
                 "Instructor": course["instructor"],
                 "Credit Hours": course["creditHours"],
             }
-            for course in result["courses"]
+            for course in result["courses"]    #to loop throught the list of the courses
         ]
 
-        course_data.append({
+        course_data.append({ #appeneding the last row to show the sum of total credit hours
             "Course Code": "",
             "Course Name": "",
             "Instructor": "Total",
-            "Credit Hours": result["sum"],
+            "Credit Hours": result["sum"],   
         })
 
         st.table(course_data)

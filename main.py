@@ -5,7 +5,7 @@ from pymongo import MongoClient
 url = os.getenv('url')
 client = MongoClient(url)
 try:
-        database = client.get_database("SMS")
+        database = client.get_database("SMS")   
         students = database.get_collection("Students")
 except Exception as e:
         raise Exception("Unable to find the document due to the following error: ", e)
@@ -42,8 +42,8 @@ def get_gpa(name):
 def get_stat(name):
     result = students.aggregate([
         {"$match": {"fullName": name}},
-        {"$unwind": "$enrolledCourses"},
-        {"$facet": {
+        {"$unwind": "$enrolledCourses"},   #since the enrolled courses is the list it converts it into the single documents so we can do aggregation
+        {"$facet": {  #it allow us to run multiply aggregation piplines
             "MaxCourse": [
                 {"$sort": {"enrolledCourses.marksObtained": -1}},
                 {"$limit": 1},
@@ -55,8 +55,8 @@ def get_stat(name):
                 {"$project": {"MinCourseName": "$enrolledCourses.courseName", "MinObtainedMarks": "$enrolledCourses.marksObtained", "_id": 0}}
             ],
             "AvgCourse": [
-                {"$group": {"_id": None, "average": {"$avg": "$enrolledCourses.marksObtained"}}},
-                {"$project": {"average": {"$round": ["$average", 2]}, "_id": 0}}
+                {"$group": {"_id": None, "average": {"$avg": "$enrolledCourses.marksObtained"}}},  #finding the average based on the marks
+                {"$project": {"average": {"$round": ["$average", 2]}, "_id": 0}} 
             ]
         }}
     ])
@@ -71,11 +71,11 @@ def get_total_Student(program , semester):
 def get_rank(name):
     rank = students.aggregate([
     {
-        "$setWindowFields": {
-        "partitionBy": { "program": "$program", "semester": "$semester" },
+        "$setWindowFields": {     #in order to find the rank we use window
+        "partitionBy": { "program": "$program", "semester": "$semester" },  #how we group when finding the rank
         "sortBy": { "cgpa": -1 },
         "output": {
-            "ranking": { "$denseRank": {} }
+            "ranking": { "$denseRank": {} }  #we use dense rank beacuse simple rank skips the rank if two people hv same position
         }
         }
     },

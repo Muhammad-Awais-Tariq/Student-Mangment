@@ -1,5 +1,5 @@
 import streamlit as st
-from main import show_courses
+from main import show_courses,get_gpa
 import pandas as pd
 
 if "is_student" not in st.session_state or not st.session_state.is_student:
@@ -12,11 +12,16 @@ st.title("Student page")
 if "is_selected" not in st.session_state:
     st.session_state.is_selected = False
 
-
+if "last_option" not in st.session_state:
+    st.session_state.last_option = None
 
 options = ["My Grades" , "My GPA" , "My Stats ","My Rank" , "My Courses"]
 
 option = st.selectbox("Select required functionality", options)
+
+if option != st.session_state.last_option:
+    st.session_state.is_selected = False
+    st.session_state.last_option = option
 
 if st.button("Start"):
     st.session_state.is_selected = True
@@ -30,9 +35,31 @@ if st.session_state.is_selected:
             2: 'Obtained',
             3: 'Grade'})
         st.table(df)
-
     elif option == "My GPA":
-        st.write("My GPA")
+        gpa = get_gpa(st.session_state.name)
+
+        st.markdown("### 📊 Academic Performance")
+        st.divider()
+
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+            st.metric(label="🎓 Semester", value=gpa["semester"])
+
+        with col2:
+            st.metric(label="📈 GPA", value=gpa["semesterGPA"])
+
+        with col3:
+            st.metric(label="🏆 CGPA", value=gpa["cgpa"])
+
+        st.divider()
+
+        st.markdown("**Semester GPA Progress**")
+        st.progress(float(gpa["semesterGPA"]) / 4.0, text=f'{gpa["semesterGPA"]} / 4.0')
+
+        st.markdown("**Cumulative GPA Progress**")
+        st.progress(float(gpa["cgpa"]) / 4.0, text=f'{gpa["cgpa"]} / 4.0')
+        
     elif option == "My Stats":
         st.write("My Stats")
     elif option == "My Rank":

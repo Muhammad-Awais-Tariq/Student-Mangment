@@ -34,12 +34,16 @@ def show_courses(name):
             
     return new_list
 
+def get_gpa(name):
+    gpa = students.find({"fullName" : name},{"semester" : 1 , "semesterGPA" : 1 ,"cgpa" : 1, "_id" : 0} )
+    for value in gpa:
+        return value
 
 def main():
     # student = get_students("Hassan Raza" , 141 )
     # print(student)
     # insert_student("0423","awais",123,"bcs",4,"B",3.2,3.2,"Active")
-    print(show_courses("Ali Raza"))
+    print(get_gpa("Ali Raza"))
     
 if __name__ == "__main__":
     main()

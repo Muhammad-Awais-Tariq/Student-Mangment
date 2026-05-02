@@ -37,13 +37,39 @@ def show_courses(name):
 def get_gpa(name):
     gpa = students.find({"fullName" : name},{"semester" : 1 , "semesterGPA" : 1 ,"cgpa" : 1, "_id" : 0} )
     for value in gpa:
+        return value 
+
+def get_stat(name):
+    result = students.aggregate([
+        {"$match": {"fullName": name}},
+        {"$unwind": "$enrolledCourses"},
+        {"$facet": {
+            "MaxCourse": [
+                {"$sort": {"enrolledCourses.marksObtained": -1}},
+                {"$limit": 1},
+                {"$project": {"MaxCourseName": "$enrolledCourses.courseName", "MaxObtainedMarks": "$enrolledCourses.marksObtained", "_id": 0}}
+            ],
+            "MinCourse": [
+                {"$sort": {"enrolledCourses.marksObtained": 1}},
+                {"$limit": 1},
+                {"$project": {"MinCourseName": "$enrolledCourses.courseName", "MinObtainedMarks": "$enrolledCourses.marksObtained", "_id": 0}}
+            ],
+            "AvgCourse": [
+                {"$group": {"_id": None, "average": {"$avg": "$enrolledCourses.marksObtained"}}},
+                {"$project": {"average": {"$round": ["$average", 2]}, "_id": 0}}
+            ]
+        }}
+    ])
+
+    for value in result :
         return value
 
 def main():
     # student = get_students("Hassan Raza" , 141 )
     # print(student)
     # insert_student("0423","awais",123,"bcs",4,"B",3.2,3.2,"Active")
-    print(get_gpa("Ali Raza"))
+    # print(get_gpa("Ali Raza"))
+    get_stat("Ali Raza")
     
 if __name__ == "__main__":
     main()

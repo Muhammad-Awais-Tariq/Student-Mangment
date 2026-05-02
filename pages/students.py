@@ -1,5 +1,5 @@
 import streamlit as st
-from main import show_courses,get_gpa , get_stat
+from main import show_courses,get_gpa , get_stat , get_rank
 import pandas as pd
 
 if "is_student" not in st.session_state or not st.session_state.is_student:
@@ -86,6 +86,29 @@ if st.session_state.is_selected:
             st.metric(label="Average Marks", value=f"{result['AvgCourse'][0]['average']:.2f}")      
 
     elif option == "My Rank":
-        st.write("My Rank")
+        rank = get_rank(st.session_state.name)
+
+        st.markdown("## Academic Standing")
+        st.divider()
+
+        col1, col2, col3, col4 = st.columns(4)
+
+        with col1:
+            st.metric(label="Your Rank", value=f"# {rank['ranking']}")
+
+        with col2:
+            st.metric(label="Total Students", value=rank['total_student'])
+
+        with col3:
+            st.metric(label="Semester", value=rank['semester'])
+
+        with col4:
+            st.metric(label="Program", value=rank['program'])
+
+        st.divider()
+
+        col_left, col_center, col_right = st.columns([1, 2, 1])
+        with col_center:
+            st.info(f"You are ranked **{rank['ranking']}** out of **{rank['total_student']}** students in **{rank['program']}**, Semester **{rank['semester']}**")
     else:
         st.write("My Courses")

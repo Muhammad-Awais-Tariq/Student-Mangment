@@ -91,6 +91,16 @@ def get_rank(name):
         value["total_student"] = get_total_Student(value["program"] ,value["semester"] )
     
     return value
+
+def get_course_stats(name):
+    result = students.aggregate([
+        {"$match": {"fullName": "Kamran Iqbal"}},
+        {"$unwind": "$enrolledCourses"},
+         {"$group": {"_id": None, "sum": {"$sum": "$enrolledCourses.creditHours"} , "courses" : {"$push" : "$enrolledCourses"}}},
+        {"$project": {"courses.courseName" : 1, "courses.courseCode": 1,"courses.instructor": 1,"courses.creditHours": 1, "sum" : 1, "_id": 0}}])    
+    
+    for value in result:
+        return value
     
 def main():
     # student = get_students("Hassan Raza" , 141 )
@@ -98,7 +108,8 @@ def main():
     # insert_student("0423","awais",123,"bcs",4,"B",3.2,3.2,"Active")
     # print(get_gpa("Ali Raza"))
     # get_stat("Ali Raza")
-    get_rank("Ali Raza")
+    # get_rank("Ali Raza")
+    get_course_stats("Ali Raza")
     
 if __name__ == "__main__":
     main()

@@ -103,12 +103,12 @@ def get_course_stats(name):
         return value
     
 def main():
-    # student = get_students("Hassan Raza" , 141 )
-    # print(student)
-    # insert_student("0423","awais",123,"bcs",4,"B",3.2,3.2,"Active")
-    # print(get_gpa("Ali Raza"))
-    # get_stat("Ali Raza")
-    # get_rank("Ali Raza")
+    student = get_students("Hassan Raza" , 141 )
+    print(student)
+    insert_student("0423","awais",123,"bcs",4,"B",3.2,3.2,"Active")
+    print(get_gpa("Ali Raza"))
+    get_stat("Ali Raza")
+    get_rank("Ali Raza")
     get_course_stats("Ali Raza")
     
 if __name__ == "__main__":

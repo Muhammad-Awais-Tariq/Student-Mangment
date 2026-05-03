@@ -1,5 +1,5 @@
 import streamlit as st
-from main import insert_student , directory , top_scores , get_all_info , update_document
+from main import insert_student , directory , top_scores , get_all_info , update_document , get_analytics
 if "is_admin" not in st.session_state or not st.session_state.is_admin:
     st.error("Access denied")
     st.stop()
@@ -209,7 +209,25 @@ if st.session_state.is_selected:
                 except Exception as e:
                     st.error(f"Update failed: {e}")            
     else:
-        st.write("Analytics")
+        result = get_analytics()
+
+        st.markdown("## Analytics")
+        st.divider()
+
+        course_data = [
+            {
+                "CourseName": course.get("CourseName", "N/A"),
+                "CourseCode": course.get("CourseCode", "N/A"),
+                "Max": course.get("MaxObtainedMarks", "N/A"),
+                "Min": course.get("MinObtainedMarks", "N/A"),
+                "Average" : course.get("AverageMarks", "N/A"),
+                "Pass": course.get("TotalPassed", "N/A"),
+                "Fail": course.get("TotalFailed", "N/A")
+            }
+            for course in result    
+        ]
+
+        st.dataframe(course_data)
 
 if st.session_state.get("student_inserted"):
         st.success("Student enrolled successfully!")

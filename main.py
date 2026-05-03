@@ -139,6 +139,11 @@ def top_scores():
         top_scores.append(data)
     
     return top_scores
+
+def get_all_info(id):
+    result = students.find({"studentId" : id})
+    for data in result:
+        return data
 def main():
     # student = get_students("Hassan Raza" , 141 )
     # print(student)
@@ -148,7 +153,8 @@ def main():
     # get_rank("Ali Raza")
     # get_course_stats("Ali Raza")
     # print(directory())
-    print(top_scores())
+    # print(top_scores())
+    print(get_all_info("2026-CS-001"))
     
 if __name__ == "__main__":
     main()

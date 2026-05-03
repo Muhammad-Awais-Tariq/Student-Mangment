@@ -111,15 +111,44 @@ def directory():
     
     return list_students
 
+def top_scores():
+    result = students.aggregate([
+        {"$unwind": "$enrolledCourses"},  # flatten courses
+        {"$sort": {"enrolledCourses.marksObtained": -1}},  
+        {"$group": {
+                    "_id": "$enrolledCourses.courseCode",            
+                    "CourseName": {"$first": "$enrolledCourses.courseName"},
+                    "MaxStudenName": {"$first": "$fullName"},                 
+                    "MaxObtainedMarks": {"$first": "$enrolledCourses.marksObtained"},  
+                    "MinObtainedMarks": {"$last": "$enrolledCourses.marksObtained"},
+                    "AverageMarks": {"$avg": "$enrolledCourses.marksObtained"}
+                }},
+        {"$project": {
+                    "_id": 0,
+                    "CourseCode": "$_id",
+                    "CourseName": 1,
+                    "MaxStudenName": 1,
+                    "MaxObtainedMarks": 1,
+                    "MinObtainedMarks": 1,
+                    "AverageMarks": {"$round": ["$AverageMarks", 2]}                    
+                }}
+                    
+    ])
+    top_scores = []
+    for data in result:
+        top_scores.append(data)
+    
+    return top_scores
 def main():
-    student = get_students("Hassan Raza" , 141 )
-    print(student)
-    insert_student("0423","awais",123,"bcs",4,"B",3.2,3.2,"Active")
-    print(get_gpa("Ali Raza"))
-    get_stat("Ali Raza")
-    get_rank("Ali Raza")
-    get_course_stats("Ali Raza")
-    print(directory())
+    # student = get_students("Hassan Raza" , 141 )
+    # print(student)
+    # insert_student("0423","awais",123,"bcs",4,"B",3.2,3.2,"Active")
+    # print(get_gpa("Ali Raza"))
+    # get_stat("Ali Raza")
+    # get_rank("Ali Raza")
+    # get_course_stats("Ali Raza")
+    # print(directory())
+    print(top_scores())
     
 if __name__ == "__main__":
     main()

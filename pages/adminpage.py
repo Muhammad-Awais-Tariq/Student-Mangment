@@ -1,5 +1,5 @@
 import streamlit as st
-from main import insert_student , directory , top_scores
+from main import insert_student , directory , top_scores , get_all_info
 if "is_admin" not in st.session_state or not st.session_state.is_admin:
     st.error("Access denied")
     st.stop()
@@ -17,6 +17,8 @@ if "is_selected" not in st.session_state:
 if "last_option" not in st.session_state:
     st.session_state.last_option = None
 
+if "get_student_info" not in st.session_state:
+    st.session_state.get_student_info = None
 
 if option != st.session_state.last_option:
     st.session_state.is_selected = False
@@ -147,7 +149,40 @@ if st.session_state.is_selected:
 
         st.dataframe(course_data)
     elif option == "Edit / Drop":
-        st.write("Edit / Drop")
+        st.session_state.student_id = st.text_input("Enter the id of student: ")
+        if st.button("Find data"):
+            st.session_state.get_student_info = True
+        
+        if st.session_state.get_student_info:
+            result = get_all_info(st.session_state.student_id)
+            id = st.text_input("Update the Student id: " , value=result["studentId"])
+            name = st.text_input("Update the Student name: " , value=result["fullName"])
+            password = st.number_input("Update password: " , value=result["password"])
+            programs = ["BSCS","BSE","BBA","BSAI","BSEE"]
+            program = st.selectbox("Update program" , programs , index= programs.index(result["program"]))
+            semesters = [1,2,3,4,5,6,7,8]
+            semester = st.selectbox("Update semester" , semesters ,index= semesters.index(result["semester"]) )
+            sections = ["A","B"]
+            default_section = result.get("section")
+            section =  st.selectbox("Update section" , sections ,     index=sections.index(default_section) if default_section in sections else None) 
+            semesterGPA = st.number_input("Update semester Gpa: " , min_value=0.0, max_value=4.0 , value=result["semesterGPA"])
+            cgpa = st.number_input("Update cgpa: " , min_value=0.0, max_value=4.0 , value=result["cgpa"])
+            statuses = ["Active","Passive"]
+            status = st.selectbox("Update status" , statuses , index=statuses.index(result["status"]))        
+            st.divider()
+            course_data = [
+                {
+                    "courseCode": course.get("courseCode", "N/A"),
+                    "courseName": course.get("courseName", "N/A"),
+                    "instructor": course.get("instructor", "N/A"),
+                    "creditHours": course.get("creditHours", "N/A"),
+                    "marksObtained": course.get("marksObtained", "N/A"),
+                    "totalMarks": course.get("totalMarks", "N/A"),
+                    "grade": course.get("grade", "N/A")
+                }
+                for course in result["enrolledCourses"]    
+            ]
+            st.data_editor(course_data)
     else:
         st.write("Analytics")
 

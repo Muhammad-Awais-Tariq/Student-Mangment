@@ -144,6 +144,9 @@ def get_all_info(id):
     result = students.find({"studentId" : id})
     for data in result:
         return data
+
+def update_document(id , updated_data):
+    students.update_one({"studentId":id},{"$set": updated_data})
 def main():
     # student = get_students("Hassan Raza" , 141 )
     # print(student)

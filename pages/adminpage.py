@@ -1,5 +1,5 @@
 import streamlit as st
-from main import insert_student , directory , top_scores , get_all_info
+from main import insert_student , directory , top_scores , get_all_info , update_document
 if "is_admin" not in st.session_state or not st.session_state.is_admin:
     st.error("Access denied")
     st.stop()
@@ -182,7 +182,32 @@ if st.session_state.is_selected:
                 }
                 for course in result["enrolledCourses"]    
             ]
-            st.data_editor(course_data)
+            edited_courses = st.data_editor(course_data, key="course_editor")
+            st.divider()
+
+            if st.button("Update Student"):
+                updated_data = {
+                    "studentId":       id,
+                    "fullName":        name,
+                    "password":        password,
+                    "program":         program,
+                    "semester":        semester,
+                    "section":         section,
+                    "semesterGPA":     semesterGPA,
+                    "cgpa":            cgpa,
+                    "status":          status,
+                    "enrolledCourses": edited_courses,
+                }
+
+                st.subheader("Updated Data:")
+                st.json(updated_data)
+
+                try:
+                    update_document(st.session_state.student_id, updated_data)
+                    st.success("Student record updated successfully!")
+                    st.session_state.get_student_info = False
+                except Exception as e:
+                    st.error(f"Update failed: {e}")            
     else:
         st.write("Analytics")
 

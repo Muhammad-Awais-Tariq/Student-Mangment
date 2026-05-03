@@ -147,6 +147,37 @@ def get_all_info(id):
 
 def update_document(id , updated_data):
     students.update_one({"studentId":id},{"$set": updated_data})
+
+def get_analytics():
+    result = students.aggregate([
+        {"$unwind": "$enrolledCourses"},  # flatten courses
+        {"$sort": {"enrolledCourses.marksObtained": -1}},  
+        {"$group": {
+                    "_id": "$enrolledCourses.courseCode",            
+                    "CourseName": {"$first": "$enrolledCourses.courseName"},               
+                    "MaxObtainedMarks": {"$first": "$enrolledCourses.marksObtained"},  
+                    "MinObtainedMarks": {"$last": "$enrolledCourses.marksObtained"},
+                    "AverageMarks": {"$avg": "$enrolledCourses.marksObtained"},
+                    "TotalPassed": {"$sum": {"$cond": [{"$gte": ["$enrolledCourses.marksObtained", 50]}, 1, 0]}},
+                    "TotalFailed": {"$sum": {"$cond": [{"$lt":  ["$enrolledCourses.marksObtained", 50]}, 1, 0]}}
+                }},
+        {"$project": {
+                    "_id": 0,
+                    "CourseCode": "$_id",
+                    "CourseName": 1,
+                    "MaxObtainedMarks": 1,
+                    "MinObtainedMarks": 1,
+                    "AverageMarks": {"$round": ["$AverageMarks", 2]},
+                    "TotalPassed": 1,
+                    "TotalFailed": 1                    
+                }}
+                    
+    ])
+    top_scores = []
+    for data in result:
+        top_scores.append(data)
+    
+    return top_scores    
 def main():
     # student = get_students("Hassan Raza" , 141 )
     # print(student)
@@ -157,7 +188,8 @@ def main():
     # get_course_stats("Ali Raza")
     # print(directory())
     # print(top_scores())
-    print(get_all_info("2026-CS-001"))
+    # print(get_all_info("2026-CS-001"))
+    print(get_analytics())
     
 if __name__ == "__main__":
     main()

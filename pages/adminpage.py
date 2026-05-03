@@ -109,7 +109,29 @@ if st.session_state.is_selected:
             st.session_state.student_inserted = True
             st.rerun()
     elif option == "Directory":
-        st.write("Directory")
+        result = get_course_stats(st.session_state.name)
+
+        st.markdown("## Enrolled Courses")
+        st.divider()
+
+        course_data = [
+            {
+                "Course Code": course["courseCode"],
+                "Course Name": course["courseName"],
+                "Instructor": course["instructor"],
+                "Credit Hours": course["creditHours"],
+            }
+            for course in result["courses"]    #to loop throught the list of the courses
+        ]
+
+        course_data.append({ #appeneding the last row to show the sum of total credit hours
+            "Course Code": "",
+            "Course Name": "",
+            "Instructor": "Total",
+            "Credit Hours": result["sum"],   
+        })
+
+        st.table(course_data)
     elif option == "Top Scores":
         st.write("Top Scores")
     elif option == "Edit / Drop":

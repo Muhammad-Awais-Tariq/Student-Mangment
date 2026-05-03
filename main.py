@@ -102,7 +102,15 @@ def get_course_stats(name):
     
     for value in result:
         return value
+
+def directory():
+    directory = students.find({},{"studentId" : 1 , "fullName" : 1 , "semester" : 1 , "section" : 1 , "cgpa" : 1 , "status" : 1 , "_id" : 0 })
+    list_students = []
+    for data in directory:
+        list_students.append(data)
     
+    return list_students
+
 def main():
     student = get_students("Hassan Raza" , 141 )
     print(student)
@@ -111,6 +119,7 @@ def main():
     get_stat("Ali Raza")
     get_rank("Ali Raza")
     get_course_stats("Ali Raza")
+    print(directory())
     
 if __name__ == "__main__":
     main()

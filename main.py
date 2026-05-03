@@ -19,8 +19,9 @@ def get_students(name , password):
     return False
 
           
-def insert_student(studentId , fullName, password , program ,semester ,  section ,semesterGPA ,  cgpa , status):
-    document = { "studentId": studentId, "fullName": fullName, "password": password, "program": program, "semester": semester, "section": section, "semesterGPA": semesterGPA, "cgpa": cgpa, "status": status , "enrolledCourses" : []}
+def insert_student(studentId , fullName, password , program ,semester ,  section ,semesterGPA ,  cgpa , status , courses):
+    document = { "studentId": studentId, "fullName": fullName, "password": password, "program": program, "semester": semester,\
+                 "section": section, "semesterGPA": semesterGPA, "cgpa": cgpa, "status": status , "enrolledCourses" : courses}
     students.insert_one(document)
 
 def show_courses(name):

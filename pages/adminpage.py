@@ -1,5 +1,5 @@
 import streamlit as st
-from main import insert_student
+from main import insert_student , directory
 if "is_admin" not in st.session_state or not st.session_state.is_admin:
     st.error("Access denied")
     st.stop()
@@ -109,29 +109,24 @@ if st.session_state.is_selected:
             st.session_state.student_inserted = True
             st.rerun()
     elif option == "Directory":
-        result = get_course_stats(st.session_state.name)
+        result = directory()
 
-        st.markdown("## Enrolled Courses")
+        st.markdown("## Directory")
         st.divider()
 
         course_data = [
             {
-                "Course Code": course["courseCode"],
-                "Course Name": course["courseName"],
-                "Instructor": course["instructor"],
-                "Credit Hours": course["creditHours"],
+                "ID": student.get("studentId", "N/A"),
+                "Name": student.get("fullName", "N/A"),
+                "Semester": student.get("semester", "N/A"),
+                "Section": student.get("section", "N/A"),
+                "CGPA": student.get("cgpa", "N/A"),
+                "Status": student.get("status", "N/A")
             }
-            for course in result["courses"]    #to loop throught the list of the courses
+            for student in result    
         ]
 
-        course_data.append({ #appeneding the last row to show the sum of total credit hours
-            "Course Code": "",
-            "Course Name": "",
-            "Instructor": "Total",
-            "Credit Hours": result["sum"],   
-        })
-
-        st.table(course_data)
+        st.dataframe(course_data)
     elif option == "Top Scores":
         st.write("Top Scores")
     elif option == "Edit / Drop":

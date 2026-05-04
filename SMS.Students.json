@@ -1,0 +1,1128 @@
+[{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c4e"
+  },
+  "studentId": "2026-CS-001",
+  "fullName": "Ali Raza",
+  "password": 1234,
+  "program": "BSCS",
+  "semester": 2,
+  "section": "A",
+  "semesterGPA": 3.6,
+  "cgpa": 3.5,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "CS101",
+      "courseName": "Programming Fundamentals",
+      "instructor": "Dr. Ahmed",
+      "creditHours": 3,
+      "marksObtained": 88,
+      "totalMarks": 100,
+      "grade": "A"
+    },
+    {
+      "courseCode": "MTH101",
+      "courseName": "Calculus",
+      "instructor": "Sir Bilal",
+      "creditHours": 3,
+      "marksObtained": 76,
+      "totalMarks": 100,
+      "grade": "B+"
+    },
+    {
+      "courseCode": "ENG101",
+      "courseName": "English Composition",
+      "instructor": "Ms. Sana",
+      "creditHours": 2,
+      "marksObtained": 91,
+      "totalMarks": 100,
+      "grade": "A"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c4f"
+  },
+  "studentId": "2026-CS-002",
+  "fullName": "Usman Tariq",
+  "password": 2234,
+  "program": "BSCS",
+  "semester": 2,
+  "section": "A",
+  "semesterGPA": 3.1,
+  "cgpa": 3,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "CS101",
+      "courseName": "Programming Fundamentals",
+      "instructor": "Dr. Ahmed",
+      "creditHours": 3,
+      "marksObtained": 72,
+      "totalMarks": 100,
+      "grade": "B"
+    },
+    {
+      "courseCode": "MTH101",
+      "courseName": "Calculus",
+      "instructor": "Sir Bilal",
+      "creditHours": 3,
+      "marksObtained": 67,
+      "totalMarks": 100,
+      "grade": "C+"
+    },
+    {
+      "courseCode": "ENG101",
+      "courseName": "English Composition",
+      "instructor": "Ms. Sana",
+      "creditHours": 2,
+      "marksObtained": 81,
+      "totalMarks": 100,
+      "grade": "A-"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c50"
+  },
+  "studentId": "2026-CS-003",
+  "fullName": "Hassan Khan",
+  "password": 3345,
+  "program": "BSCS",
+  "semester": 4,
+  "section": "B",
+  "semesterGPA": 3.8,
+  "cgpa": 3.7,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "DB201",
+      "courseName": "Database Systems",
+      "instructor": "Dr. Noman",
+      "creditHours": 3,
+      "marksObtained": 95,
+      "totalMarks": 100,
+      "grade": "A+"
+    },
+    {
+      "courseCode": "DS201",
+      "courseName": "Data Structures",
+      "instructor": "Dr. Fatima",
+      "creditHours": 3,
+      "marksObtained": 89,
+      "totalMarks": 100,
+      "grade": "A"
+    },
+    {
+      "courseCode": "SE201",
+      "courseName": "Software Engineering",
+      "instructor": "Sir Haris",
+      "creditHours": 3,
+      "marksObtained": 84,
+      "totalMarks": 100,
+      "grade": "A-"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c51"
+  },
+  "studentId": "2026-CS-004",
+  "fullName": "Zain Ali",
+  "password": 4456,
+  "program": "BSCS",
+  "semester": 4,
+  "section": "B",
+  "semesterGPA": 2.9,
+  "cgpa": 3,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "DB201",
+      "courseName": "Database Systems",
+      "instructor": "Dr. Noman",
+      "creditHours": 3,
+      "marksObtained": 61,
+      "totalMarks": 100,
+      "grade": "C"
+    },
+    {
+      "courseCode": "DS201",
+      "courseName": "Data Structures",
+      "instructor": "Dr. Fatima",
+      "creditHours": 3,
+      "marksObtained": 74,
+      "totalMarks": 100,
+      "grade": "B"
+    },
+    {
+      "courseCode": "SE201",
+      "courseName": "Software Engineering",
+      "instructor": "Sir Haris",
+      "creditHours": 3,
+      "marksObtained": 70,
+      "totalMarks": 100,
+      "grade": "B-"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c52"
+  },
+  "studentId": "2026-CS-005",
+  "fullName": "Areeba Noor",
+  "password": 5567,
+  "program": "BSCS",
+  "semester": 6,
+  "section": "A",
+  "semesterGPA": 3.9,
+  "cgpa": 3.85,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "AI301",
+      "courseName": "Artificial Intelligence",
+      "instructor": "Dr. Saad",
+      "creditHours": 3,
+      "marksObtained": 97,
+      "totalMarks": 100,
+      "grade": "A+"
+    },
+    {
+      "courseCode": "CN301",
+      "courseName": "Computer Networks",
+      "instructor": "Sir Hamza",
+      "creditHours": 3,
+      "marksObtained": 90,
+      "totalMarks": 100,
+      "grade": "A"
+    },
+    {
+      "courseCode": "OS301",
+      "courseName": "Operating Systems",
+      "instructor": "Dr. Ayesha",
+      "creditHours": 3,
+      "marksObtained": 87,
+      "totalMarks": 100,
+      "grade": "A"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c53"
+  },
+  "studentId": "2026-SE-001",
+  "fullName": "Muhammad Hamza",
+  "password": 6678,
+  "program": "BSE",
+  "semester": 2,
+  "section": "A",
+  "semesterGPA": 3.2,
+  "cgpa": 3.15,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "SE101",
+      "courseName": "Intro to SE",
+      "instructor": "Sir Umar",
+      "creditHours": 3,
+      "marksObtained": 79,
+      "totalMarks": 100,
+      "grade": "B+"
+    },
+    {
+      "courseCode": "MTH101",
+      "courseName": "Calculus",
+      "instructor": "Sir Bilal",
+      "creditHours": 3,
+      "marksObtained": 71,
+      "totalMarks": 100,
+      "grade": "B"
+    },
+    {
+      "courseCode": "ICT101",
+      "courseName": "ICT",
+      "instructor": "Ms. Hina",
+      "creditHours": 2,
+      "marksObtained": 88,
+      "totalMarks": 100,
+      "grade": "A"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c54"
+  },
+  "studentId": "2026-SE-002",
+  "fullName": "Dua Fatima",
+  "password": 7789,
+  "program": "BSE",
+  "semester": 4,
+  "section": "B",
+  "semesterGPA": 3.7,
+  "cgpa": 3.6,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "REQ201",
+      "courseName": "Requirements Engineering",
+      "instructor": "Dr. Waqar",
+      "creditHours": 3,
+      "marksObtained": 92,
+      "totalMarks": 100,
+      "grade": "A"
+    },
+    {
+      "courseCode": "SQA201",
+      "courseName": "Software Quality",
+      "instructor": "Sir Danish",
+      "creditHours": 3,
+      "marksObtained": 85,
+      "totalMarks": 100,
+      "grade": "A-"
+    },
+    {
+      "courseCode": "DB201",
+      "courseName": "Database Systems",
+      "instructor": "Dr. Noman",
+      "creditHours": 3,
+      "marksObtained": 82,
+      "totalMarks": 100,
+      "grade": "A-"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c55"
+  },
+  "studentId": "2026-SE-003",
+  "fullName": "Abdul Rehman",
+  "password": 8890,
+  "program": "BSE",
+  "semester": 6,
+  "section": "A",
+  "semesterGPA": 2.8,
+  "cgpa": 2.9,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "PM301",
+      "courseName": "Project Management",
+      "instructor": "Dr. Salman",
+      "creditHours": 3,
+      "marksObtained": 63,
+      "totalMarks": 100,
+      "grade": "C"
+    },
+    {
+      "courseCode": "SAD301",
+      "courseName": "System Analysis",
+      "instructor": "Sir Owais",
+      "creditHours": 3,
+      "marksObtained": 69,
+      "totalMarks": 100,
+      "grade": "C+"
+    },
+    {
+      "courseCode": "WEB301",
+      "courseName": "Web Engineering",
+      "instructor": "Ms. Aiman",
+      "creditHours": 3,
+      "marksObtained": 74,
+      "totalMarks": 100,
+      "grade": "B"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c56"
+  },
+  "studentId": "2026-SE-004",
+  "fullName": "Laiba Khan",
+  "password": 9901,
+  "program": "BSE",
+  "semester": 8,
+  "section": "B",
+  "semesterGPA": 3.5,
+  "cgpa": 3.4,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "FYP401",
+      "courseName": "Final Year Project",
+      "instructor": "Dr. Irfan",
+      "creditHours": 3,
+      "marksObtained": 86,
+      "totalMarks": 100,
+      "grade": "A"
+    },
+    {
+      "courseCode": "ENT401",
+      "courseName": "Entrepreneurship",
+      "instructor": "Sir Adnan",
+      "creditHours": 2,
+      "marksObtained": 80,
+      "totalMarks": 100,
+      "grade": "A-"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c57"
+  },
+  "studentId": "2026-SE-005",
+  "fullName": "Ahmed Rauf",
+  "password": 1112,
+  "program": "BSE",
+  "semester": 8,
+  "section": "A",
+  "semesterGPA": 3,
+  "cgpa": 3.1,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "FYP401",
+      "courseName": "Final Year Project",
+      "instructor": "Dr. Irfan",
+      "creditHours": 3,
+      "marksObtained": 77,
+      "totalMarks": 100,
+      "grade": "B+"
+    },
+    {
+      "courseCode": "ENT401",
+      "courseName": "Entrepreneurship",
+      "instructor": "Sir Adnan",
+      "creditHours": 2,
+      "marksObtained": 72,
+      "totalMarks": 100,
+      "grade": "B"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c58"
+  },
+  "studentId": "2026-BBA-001",
+  "fullName": "Sara Javed",
+  "password": 1213,
+  "program": "BBA",
+  "semester": 2,
+  "section": "A",
+  "semesterGPA": 3.4,
+  "cgpa": 3.3,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "ACC101",
+      "courseName": "Accounting",
+      "instructor": "Sir Farhan",
+      "creditHours": 3,
+      "marksObtained": 84,
+      "totalMarks": 100,
+      "grade": "A-"
+    },
+    {
+      "courseCode": "ECO101",
+      "courseName": "Economics",
+      "instructor": "Dr. Huma",
+      "creditHours": 3,
+      "marksObtained": 78,
+      "totalMarks": 100,
+      "grade": "B+"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c59"
+  },
+  "studentId": "2026-BBA-002",
+  "fullName": "Maham Iqbal",
+  "password": 1314,
+  "program": "BBA",
+  "semester": 4,
+  "section": "B",
+  "semesterGPA": 3.9,
+  "cgpa": 3.8,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "MKT201",
+      "courseName": "Marketing",
+      "instructor": "Ms. Rabia",
+      "creditHours": 3,
+      "marksObtained": 96,
+      "totalMarks": 100,
+      "grade": "A+"
+    },
+    {
+      "courseCode": "FIN201",
+      "courseName": "Finance",
+      "instructor": "Dr. Rizwan",
+      "creditHours": 3,
+      "marksObtained": 89,
+      "totalMarks": 100,
+      "grade": "A"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c5a"
+  },
+  "studentId": "2026-BBA-003",
+  "fullName": "Taha Siddiqui",
+  "password": 1415,
+  "program": "BBA",
+  "semester": 6,
+  "section": "A",
+  "semesterGPA": 2.7,
+  "cgpa": 2.8,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "HR301",
+      "courseName": "Human Resource",
+      "instructor": "Sir Jawad",
+      "creditHours": 3,
+      "marksObtained": 60,
+      "totalMarks": 100,
+      "grade": "C"
+    },
+    {
+      "courseCode": "MGT301",
+      "courseName": "Management",
+      "instructor": "Dr. Saba",
+      "creditHours": 3,
+      "marksObtained": 66,
+      "totalMarks": 100,
+      "grade": "C+"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c5b"
+  },
+  "studentId": "2026-BBA-004",
+  "fullName": "Noor Ul Ain",
+  "password": 1516,
+  "program": "BBA",
+  "semester": 8,
+  "section": "B",
+  "semesterGPA": 3.6,
+  "cgpa": 3.55,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "STR401",
+      "courseName": "Strategic Management",
+      "instructor": "Dr. Kamran",
+      "creditHours": 3,
+      "marksObtained": 87,
+      "totalMarks": 100,
+      "grade": "A"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c5c"
+  },
+  "studentId": "2026-BBA-005",
+  "fullName": "Bilal Aslam",
+  "password": 1617,
+  "program": "BBA",
+  "semester": 8,
+  "section": "A",
+  "semesterGPA": 3.1,
+  "cgpa": 3.2,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "STR401",
+      "courseName": "Strategic Management",
+      "instructor": "Dr. Kamran",
+      "creditHours": 3,
+      "marksObtained": 76,
+      "totalMarks": 100,
+      "grade": "B+"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c5d"
+  },
+  "studentId": "2026-AI-001",
+  "fullName": "Hiba Noor",
+  "password": 1718,
+  "program": "BSAI",
+  "semester": 2,
+  "section": "A",
+  "semesterGPA": 3.8,
+  "cgpa": 3.7,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "AI101",
+      "courseName": "Intro to AI",
+      "instructor": "Dr. Saad",
+      "creditHours": 3,
+      "marksObtained": 94,
+      "totalMarks": 100,
+      "grade": "A+"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c5e"
+  },
+  "studentId": "2026-AI-002",
+  "fullName": "Huzaifa Malik",
+  "password": 1819,
+  "program": "BSAI",
+  "semester": 4,
+  "section": "B",
+  "semesterGPA": 3.3,
+  "cgpa": 3.25,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "ML201",
+      "courseName": "Machine Learning",
+      "instructor": "Dr. Ayesha",
+      "creditHours": 3,
+      "marksObtained": 82,
+      "totalMarks": 100,
+      "grade": "A-"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c5f"
+  },
+  "studentId": "2026-AI-003",
+  "fullName": "Maryam Zahid",
+  "password": 1920,
+  "program": "BSAI",
+  "semester": 6,
+  "section": "A",
+  "semesterGPA": 2.9,
+  "cgpa": 3,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "DL301",
+      "courseName": "Deep Learning",
+      "instructor": "Dr. Hassan",
+      "creditHours": 3,
+      "marksObtained": 68,
+      "totalMarks": 100,
+      "grade": "C+"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c60"
+  },
+  "studentId": "2026-AI-004",
+  "fullName": "Fahad Qureshi",
+  "password": 2021,
+  "program": "BSAI",
+  "semester": 8,
+  "section": "B",
+  "semesterGPA": 3.7,
+  "cgpa": 3.65,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "CV401",
+      "courseName": "Computer Vision",
+      "instructor": "Dr. Nida",
+      "creditHours": 3,
+      "marksObtained": 90,
+      "totalMarks": 100,
+      "grade": "A"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44ad9d429a8abad8c1c61"
+  },
+  "studentId": "2026-AI-005",
+  "fullName": "Iqra Ashraf",
+  "password": 2122,
+  "program": "BSAI",
+  "semester": 8,
+  "section": "A",
+  "semesterGPA": 3.4,
+  "cgpa": 3.45,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "CV401",
+      "courseName": "Computer Vision",
+      "instructor": "Dr. Nida",
+      "creditHours": 3,
+      "marksObtained": 83,
+      "totalMarks": 100,
+      "grade": "A-"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c62"
+  },
+  "studentId": "BSCS-021",
+  "fullName": "Imran Hussain",
+  "password": 1111,
+  "program": "BSCS",
+  "semester": 1,
+  "cgpa": 1.6,
+  "semesterGPA": 1.6,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "CS101",
+      "courseName": "Programming Fundamentals",
+      "instructor": "Dr. Tariq",
+      "creditHours": 3,
+      "marksObtained": 52,
+      "totalMarks": 100,
+      "grade": "D"
+    },
+    {
+      "courseCode": "MTH101",
+      "courseName": "Calculus",
+      "instructor": "Dr. Asif",
+      "creditHours": 3,
+      "marksObtained": 48,
+      "totalMarks": 100,
+      "grade": "F"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c63"
+  },
+  "studentId": "BSCS-022",
+  "fullName": "Iqra Nawaz",
+  "password": 2222,
+  "program": "BSCS",
+  "semester": 1,
+  "cgpa": 4,
+  "semesterGPA": 4,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "CS101",
+      "courseName": "Programming Fundamentals",
+      "instructor": "Dr. Tariq",
+      "creditHours": 3,
+      "marksObtained": 91,
+      "totalMarks": 100,
+      "grade": "A+"
+    },
+    {
+      "courseCode": "MTH101",
+      "courseName": "Calculus",
+      "instructor": "Dr. Asif",
+      "creditHours": 3,
+      "marksObtained": 87,
+      "totalMarks": 100,
+      "grade": "A"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c64"
+  },
+  "studentId": "BSCS-023",
+  "fullName": "Kamran Iqbal",
+  "password": 3333,
+  "program": "BSCS",
+  "semester": 3,
+  "cgpa": 2.7,
+  "semesterGPA": 2.7,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "CS201",
+      "courseName": "Data Structures",
+      "instructor": "Dr. Imran",
+      "creditHours": 3,
+      "marksObtained": 66,
+      "totalMarks": 100,
+      "grade": "C"
+    },
+    {
+      "courseCode": "MTH201",
+      "courseName": "Linear Algebra",
+      "instructor": "Dr. Asif",
+      "creditHours": 3,
+      "marksObtained": 62,
+      "totalMarks": 100,
+      "grade": "C"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c66"
+  },
+  "studentId": "BSCS-025",
+  "fullName": "Asad Javed",
+  "password": 5555,
+  "program": "BSCS",
+  "semester": 3,
+  "cgpa": 3,
+  "semesterGPA": 3,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "CS201",
+      "courseName": "Data Structures",
+      "instructor": "Dr. Imran",
+      "creditHours": 3,
+      "marksObtained": 73,
+      "totalMarks": 100,
+      "grade": "B"
+    },
+    {
+      "courseCode": "MTH201",
+      "courseName": "Linear Algebra",
+      "instructor": "Dr. Asif",
+      "creditHours": 3,
+      "marksObtained": 69,
+      "totalMarks": 100,
+      "grade": "C+"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c69"
+  },
+  "studentId": "BSCS-028",
+  "fullName": "Zara Ahmed",
+  "password": 8888,
+  "program": "BSCS",
+  "semester": 5,
+  "cgpa": 3.9,
+  "semesterGPA": 3.9,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "CS401",
+      "courseName": "Software Engineering",
+      "instructor": "Dr. Ahsan",
+      "creditHours": 3,
+      "marksObtained": 87,
+      "totalMarks": 100,
+      "grade": "A"
+    },
+    {
+      "courseCode": "CS402",
+      "courseName": "Operating Systems",
+      "instructor": "Dr. Kashif",
+      "creditHours": 3,
+      "marksObtained": 84,
+      "totalMarks": 100,
+      "grade": "A-"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c6a"
+  },
+  "studentId": "SE-029",
+  "fullName": "Bilal Siddiqui",
+  "password": 1234,
+  "program": "BSE",
+  "semester": 2,
+  "cgpa": 3.2,
+  "semesterGPA": 3.2,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "SE101",
+      "courseName": "Intro SE",
+      "instructor": "Dr. Ahsan",
+      "creditHours": 3,
+      "marksObtained": 75,
+      "totalMarks": 100,
+      "grade": "B+"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c6b"
+  },
+  "studentId": "SE-030",
+  "fullName": "Sana Mirza",
+  "password": 2345,
+  "program": "BSE",
+  "semester": 2,
+  "cgpa": 3.7,
+  "semesterGPA": 3.8,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "SE101",
+      "courseName": "Intro SE",
+      "instructor": "Dr. Ahsan",
+      "creditHours": 3,
+      "marksObtained": 83,
+      "totalMarks": 100,
+      "grade": "A"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c6d"
+  },
+  "studentId": "SE-032",
+  "fullName": "Hira Baig",
+  "password": 4567,
+  "program": "BSE",
+  "semester": 4,
+  "cgpa": 4,
+  "semesterGPA": 4,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "SE201",
+      "courseName": "Design Patterns",
+      "instructor": "Dr. Ahsan",
+      "creditHours": 3,
+      "marksObtained": 90,
+      "totalMarks": 100,
+      "grade": "A+"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c6f"
+  },
+  "studentId": "EE-034",
+  "fullName": "Fahad Chaudhry",
+  "password": 7890,
+  "program": "BSEE",
+  "semester": 3,
+  "cgpa": 3.7,
+  "semesterGPA": 3.8,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "EE201",
+      "courseName": "Signals",
+      "instructor": "Dr. Mushtaq",
+      "creditHours": 3,
+      "marksObtained": 84,
+      "totalMarks": 100,
+      "grade": "A-"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c70"
+  },
+  "studentId": "EE-035",
+  "fullName": "Raza Gillani",
+  "password": 8901,
+  "program": "BSEE",
+  "semester": 5,
+  "cgpa": 2.3,
+  "semesterGPA": 2.6,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "EE401",
+      "courseName": "Power Electronics",
+      "instructor": "Dr. Pervaiz",
+      "creditHours": 3,
+      "marksObtained": 66,
+      "totalMarks": 100,
+      "grade": "C"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c71"
+  },
+  "studentId": "EE-036",
+  "fullName": "Mahnoor Anwar",
+  "password": 9012,
+  "program": "BSEE",
+  "semester": 1,
+  "cgpa": 3.3,
+  "semesterGPA": 3.3,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "EE101",
+      "courseName": "Circuits",
+      "instructor": "Dr. Mushtaq",
+      "creditHours": 3,
+      "marksObtained": 76,
+      "totalMarks": 100,
+      "grade": "B+"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c72"
+  },
+  "studentId": "BBA-037",
+  "fullName": "Ayesha Malik",
+  "password": 1212,
+  "program": "BBA",
+  "semester": 3,
+  "cgpa": 2.9,
+  "semesterGPA": 3,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "BBA201",
+      "courseName": "Macroeconomics",
+      "instructor": "Dr. Farhan",
+      "creditHours": 3,
+      "marksObtained": 72,
+      "totalMarks": 100,
+      "grade": "B"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c73"
+  },
+  "studentId": "BBA-038",
+  "fullName": "Amina Sheikh",
+  "password": 2121,
+  "program": "BBA",
+  "semester": 3,
+  "cgpa": 3.6,
+  "semesterGPA": 3.5,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "BBA201",
+      "courseName": "Macroeconomics",
+      "instructor": "Dr. Farhan",
+      "creditHours": 3,
+      "marksObtained": 78,
+      "totalMarks": 100,
+      "grade": "B+"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c74"
+  },
+  "studentId": "BBA-039",
+  "fullName": "Nadia Qureshi",
+  "password": 3131,
+  "program": "BBA",
+  "semester": 5,
+  "cgpa": 3.3,
+  "semesterGPA": 3.4,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "BBA401",
+      "courseName": "Strategic Management",
+      "instructor": "Dr. Shahid",
+      "creditHours": 3,
+      "marksObtained": 79,
+      "totalMarks": 100,
+      "grade": "B+"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f44af8d429a8abad8c1c75"
+  },
+  "studentId": "BBA-040",
+  "fullName": "Hassan Raza",
+  "password": 4141,
+  "program": "BBA",
+  "semester": 1,
+  "cgpa": 3,
+  "semesterGPA": 3.1,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "BBA101",
+      "courseName": "Management",
+      "instructor": "Dr. Shahid",
+      "creditHours": 3,
+      "marksObtained": 75,
+      "totalMarks": 100,
+      "grade": "B+"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69f73eeacf36ddca1e22b2d4"
+  },
+  "studentId": "tempid",
+  "fullName": "MuhammadAwaisTariq",
+  "password": 1234,
+  "program": "BSCS",
+  "semester": 1,
+  "section": "A",
+  "semesterGPA": 3,
+  "cgpa": 2,
+  "status": "Active",
+  "enrolledCourses": [
+    {
+      "courseCode": "ENG101",
+      "courseName": "English Composition",
+      "instructor": "Ms. Sana",
+      "creditHours": 2,
+      "marksObtained": 50,
+      "totalMarks": 100,
+      "grade": "b"
+    },
+    {
+      "courseCode": "AI301",
+      "courseName": "Artificial Intelligence",
+      "instructor": "Dr. Saad",
+      "creditHours": 3,
+      "marksObtained": 50,
+      "totalMarks": 100,
+      "grade": "b"
+    }
+  ]
+}]
